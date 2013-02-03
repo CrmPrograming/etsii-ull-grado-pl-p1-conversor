@@ -3,12 +3,12 @@ function calculate() {
   var result;
   var original = document.getElementById("original");
   var temp = original.value;
-  var regexp = /^\d+(f|F|C|c)$/g;
+  var regexp = /^\d+(.\d+)?(f|F|C|c)$/g;
   
   var m = temp.match(regexp);
   
   if (m) {
-    var num = m[0].match(/^\d+/);
+    var num = m[0].match(/^\d+(.\d+)?/);
     var type = m[0].match(/f|F|C|c/);
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
