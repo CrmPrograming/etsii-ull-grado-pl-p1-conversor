@@ -12,11 +12,13 @@ function calculate() {
     var type = m[0].match(/f|F|C|c/);
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
-      result = (num * 9/5)+32;      
+      result = (num * 9 / 5) + 32;
+      result = result.toFixed(2);
       result = result + 'F';
     }
     else {
-      result = (num - 32)*5/9;
+      result = (num - 32) * 5 / 9;
+      result = result.toFixed(2);
       result = result + 'C';
     }
     converted.innerHTML = result;
